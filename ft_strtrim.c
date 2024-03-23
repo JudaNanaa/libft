@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:07:11 by marvin            #+#    #+#             */
-/*   Updated: 2024/03/23 13:23:08 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/24 00:28:53 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	ft_malloc_size(char const *s1, char const *sep)
 		i++;
 	while (ft_is_in_charset(s1[len_s - j], sep) == 1)
 		j++;
-	return (len_s - i + j);
+	return (len_s - (i + j));
 }
 
 static void	ft_fill_str(char const *s1, char *str, char const *sep)

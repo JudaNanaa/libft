@@ -6,12 +6,49 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:10:39 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/23 16:06:29 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/24 00:48:49 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_lenstr(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+/*static char ft_test(unsigned int i, char c)
+{
+	if (i < 10)
+		c++;
+	else
+		c--;
+	return (c);
+}*/
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char			*str;
+	unsigned int	i;
+	char			*true_s;
+
+	i = -1;
+	true_s = (char *)s;
+	str = malloc(sizeof(char) * (ft_lenstr(true_s) + 1));
+	if (!str)
+		return (NULL);
+	while (true_s[++i])
+		str[i] = f(i, true_s[i]);
+	str[i] = '\0';
+	return (str);
 }
+
+/*int main(void)
+{
+	char chain[] = "aaaaaaaaaacccccccccc";
+	printf("%s\n", ft_strmapi(chain, &ft_test));
+}*/
