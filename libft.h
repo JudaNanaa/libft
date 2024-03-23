@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 21:47:05 by marvin            #+#    #+#             */
-/*   Updated: 2024/03/23 16:04:06 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/23 17:28:21 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 # include <strings.h>
 # include <unistd.h>
 
-int		ft_atoi(char *str);
-int		ft_strlen(char *str);
+int		ft_atoi(const char *str);
+int		ft_strlen(const char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -36,7 +36,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 char	*ft_itoa(int n);
 char	*ft_strcpy(char *dest, char *src);
-char	*ft_strdup(char *src);
+char	*ft_strdup(const char *src);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strnew(size_t size);
 char	*ft_strstr(char *str, char *to_find);

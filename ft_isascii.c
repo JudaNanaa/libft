@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yourLogin <yourLogin@student.42.fr>        +#+  +:+       +#+        */
+/*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 00:16:58 by yourLogin         #+#    #+#             */
-/*   Updated: 2024/03/22 00:16:58 by yourLogin        ###   ########.fr       */
+/*   Updated: 2024/03/23 17:52:34 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 126)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }
 
 /*int main(void)
 {
-	printf("%d\n", ft_isascii(126));
-	printf("%d\n", isascii(126));
+	printf("%d\n", ft_isascii(128));
+	printf("%d\n", isascii(128));
 }*/

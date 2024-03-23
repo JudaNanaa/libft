@@ -1,0 +1,5 @@
+libtest/
+*.out
+*.o
+*.a
+.vscode/

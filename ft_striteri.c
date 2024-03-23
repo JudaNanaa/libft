@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:06:38 by marvin            #+#    #+#             */
-/*   Updated: 2024/03/23 15:36:53 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/23 23:28:48 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@
 {
 	write(1, &s[i], 1);
 }*/
-
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
-
 	i = 0;
 	while (s[i])
 		f(i++, s);
