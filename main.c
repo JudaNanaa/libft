@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/23 15:10:39 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/23 16:06:29 by madamou          ###   ########.fr       */
+/*   Created: 2024/03/23 17:02:25 by madamou           #+#    #+#             */
+/*   Updated: 2024/03/23 17:03:19 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	main(void)
 {
-	
+	char **test;
+	int i;
+
+	i = 0;
+	test = ft_split("je suis représentée comme tout!", ' ');
+	if (test == NULL)
+	{
+		printf("tout est null\n");
+		return (0);
+	}
+	while (test[i])
+		printf("%s\n", test[i++]);
+	if (test[i] == NULL)
+		printf("%u", 42);
 }
