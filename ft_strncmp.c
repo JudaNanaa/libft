@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 03:28:22 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/23 11:04:36 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/24 01:33:55 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*true_s1;
+	unsigned char	*true_s2;
 
+	true_s1 = (unsigned char *)s1;
+	true_s2 = (unsigned char *)s2;
 	i = 0;
 	while (i < n)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		if (true_s1[i] != true_s2[i])
+			return (true_s1[i] - true_s2[i]);
 		i++;
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:07:11 by marvin            #+#    #+#             */
-/*   Updated: 2024/03/24 00:28:53 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/24 01:14:01 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,7 @@ char	*ft_strtrim(char const *s1, char const *sep)
 
 /*int main(void)
 {
-	printf("%s\n", ft_strtrim("         je suis le meilleur!   ", " "));
+	char    str[] = "salut la compagnie salfut";
+	char    set[] = "asult";
+	printf("%s\n", ft_strtrim(str, set));
 }*/

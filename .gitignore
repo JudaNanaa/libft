@@ -3,3 +3,4 @@ libtest/
 *.o
 *.a
 .vscode/
+output/
