@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:10:39 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/24 14:00:49 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/24 18:59:22 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*true_s;
 
 	i = -1;
+	if (!s)
+		return (NULL);
 	true_s = (char *)s;
 	str = malloc(sizeof(char) * (ft_lenstr(true_s) + 1));
 	if (!str)
