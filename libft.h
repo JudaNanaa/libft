@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 21:47:05 by marvin            #+#    #+#             */
-/*   Updated: 2024/03/24 13:57:59 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/24 14:03:01 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@
 # include <string.h>
 # include <strings.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 int					ft_atoi(const char *str);
 int					ft_strlen(const char *str);
@@ -73,11 +79,5 @@ size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 
 t_list				*ft_lstnew(void *content);
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
 
 #endif
