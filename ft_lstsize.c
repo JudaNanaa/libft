@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 20:13:24 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/24 20:24:32 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/24 22:41:41 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@ int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
-	if (!lst)
-		return (0);
-	i = 1;
-	while (lst->next != NULL)
+	i = 0;
+	while (lst)
 	{
-		i++;
 		lst = lst->next;
+		i++;
 	}
 	return (i);
 }
@@ -45,9 +43,9 @@ static t_list	*ft_lstnew1(void *content)
 	new->content = content;
 	new->next = NULL;
 	return (new);
-}*/
+}
 
-/*int main(void)
+int main(void)
 {
 	char chain[] = "oui je test";
 	t_list *test = ft_lstnew1(chain);
