@@ -45,7 +45,7 @@ static t_list	*ft_lstnew1(void *content)
 	return (new);
 }
 
-int main(void)
+int	main(void)
 {
 	char chain[] = "oui je test";
 	t_list *test = ft_lstnew1(chain);
