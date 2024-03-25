@@ -6,7 +6,7 @@
 #    By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 16:07:55 by madamou           #+#    #+#              #
-#    Updated: 2024/03/24 23:12:54 by madamou          ###   ########.fr        #
+#    Updated: 2024/03/25 15:00:11 by madamou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 
 OBJS = $(SRCS:.c=.o)
 
-SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstlast.c ft_lstsize.c
+SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstlast.c ft_lstsize.c ft_lstadd_back.c
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
@@ -35,14 +35,14 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 
-$(OBJS): $(SRCS)
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o : %.c
+	$(CC) $(CFLAGS) -c -include ./libft.h $< -o $@
 
 bonus: all $(OBJS_BONUS)
 	ar rc $(NAME) $(OBJS_BONUS)
 
 $(OBJS_BONUS): $(SRCS_BONUS)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c -include ./libft.h $< -o $@
 
 clean:
 	rm -rf $(OBJS) $(OBJS_BONUS)

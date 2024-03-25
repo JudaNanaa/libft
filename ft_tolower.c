@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 00:36:57 by yourLogin         #+#    #+#             */
-/*   Updated: 2024/03/23 23:54:56 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/25 14:32:33 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int	ft_tolower(int c)
 
 /*int	main(void)
 {
-	printf("%d\n", ft_tolower(-128));
-	printf("%d\n", tolower(-128));
+	printf("%d\n", ft_tolower(-127));
+	printf("%d\n", tolower(-127));
 }*/
