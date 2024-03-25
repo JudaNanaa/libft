@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:03:02 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/25 15:16:39 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/25 20:41:03 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	del(lst);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }
 
 /*static void ft_del_lst(void *lst)

@@ -6,7 +6,7 @@
 #    By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 16:07:55 by madamou           #+#    #+#              #
-#    Updated: 2024/03/25 16:07:47 by madamou          ###   ########.fr        #
+#    Updated: 2024/03/25 23:51:27 by madamou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 
 OBJS = $(SRCS:.c=.o)
 
-SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstlast.c ft_lstsize.c ft_lstadd_back.c
+SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstlast.c ft_lstsize.c \
+              ft_lstadd_back.c ft_lstiter.c ft_lstmap.c
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 

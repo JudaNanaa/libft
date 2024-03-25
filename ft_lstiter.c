@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 15:22:12 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/25 23:49:13 by madamou          ###   ########.fr       */
+/*   Created: 2024/03/25 20:10:14 by madamou           #+#    #+#             */
+/*   Updated: 2024/03/25 23:52:29 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*buff;
 
-	while (*lst)
+	buff = lst;
+	while (buff)
 	{
-		buff = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = buff;
+		f(buff->content);
+		buff = buff->next;
 	}
-	free(*lst);
-	*lst = NULL;
 }
 
-/*static void delete_content(void *content)
-{
-	free(content);
-}
-
-static t_list	*ft_lstnew1(void *content)
+/*static t_list	*ft_lstnew1(void *content)
 {
 	t_list	*new;
 
@@ -41,6 +34,14 @@ static t_list	*ft_lstnew1(void *content)
 	new->content = content;
 	new->next = NULL;
 	return (new);
+}
+
+static void	print_content(void *content)
+{
+	char	*str;
+
+	str = (char *)content;
+	printf("%s\n", str);
 }
 
 int	main(void)
@@ -54,18 +55,13 @@ int	main(void)
 	elem1->next = elem2;
 	elem2->next = elem3;
 
-	// Appel fonction ft_lstclear pour supprimer tous les éléments
-	ft_lstclear(&elem1, &delete_content);
+	// Affichage du contenu de la liste avant l'application de la fonction
+	printf("Contenu de la liste avant l'application de la fonction :\n");
+	ft_lstiter(elem1, &print_content);
 
-	// Vérification du résultat (devrait afficher "Liste vidée : NULL")
-	if (elem1 == NULL)
-	{
-		printf("Liste vidée : NULL\n");
-	}
-	else
-	{
-		printf("Erreur : La liste n'est pas vide après suppression.\n");
-	}
+	// Application fonction ft_lstiter pour afficher contenu chaque élément
+	printf("\nContenu de la liste après l'application de la fonction :\n");
+	ft_lstiter(elem1, &print_content);
 
 	return (0);
 }*/
