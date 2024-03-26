@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 00:36:57 by yourLogin         #+#    #+#             */
-/*   Updated: 2024/03/26 00:12:04 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/26 14:35:50 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_tolower(int c)
 {
 	unsigned char	true_c;
 
-	if (c == -1 || c == -129 || c == 256)
+	if (c == -1 || c <= -129 || c >= 256)
 		return (c);
 	true_c = (unsigned char)c;
 	if (true_c >= 'A' && true_c <= 'Z')
@@ -26,6 +26,6 @@ int	ft_tolower(int c)
 
 /*int	main(void)
 {
-	printf("%d\n", ft_tolower(-129));
-	printf("%d\n", tolower(-129));
+	printf("%d\n", ft_tolower(-130));
+	printf("%d\n", tolower(-130));
 }*/
