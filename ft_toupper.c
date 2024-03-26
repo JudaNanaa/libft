@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 00:31:14 by yourLogin         #+#    #+#             */
-/*   Updated: 2024/03/23 23:54:27 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/26 00:12:54 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_toupper(int c)
 {
 	unsigned char	true_c;
 
-	if (c == -1)
+	if (c == -1 || c == -129 || c == 256)
 		return (c);
 	true_c = (unsigned char)c;
 	if (true_c >= 'a' && true_c <= 'z')
