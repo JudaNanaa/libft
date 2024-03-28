@@ -6,7 +6,7 @@
 #    By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 16:07:55 by madamou           #+#    #+#              #
-#    Updated: 2024/03/25 23:51:27 by madamou          ###   ########.fr        #
+#    Updated: 2024/03/28 01:04:37 by madamou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,13 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
        ft_split.c ft_strchr.c ft_strclr.c ft_strcpy.c ft_strdup.c ft_striteri.c \
        ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c \
        ft_strncpy.c ft_strnew.c ft_strrchr.c ft_strstr.c ft_strtrim.c \
-       ft_substr.c ft_tolower.c ft_toupper.c ft_strmapi.c ft_lstdelone.c \
-       ft_lstclear.c
+       ft_substr.c ft_tolower.c ft_toupper.c ft_strmapi.c
 
 OBJS = $(SRCS:.c=.o)
 
-SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstlast.c ft_lstsize.c \
-              ft_lstadd_back.c ft_lstiter.c ft_lstmap.c
+SRCS_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstlast_bonus.c ft_lstsize_bonus.c \
+              ft_lstadd_back_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c \
+              ft_lstclear_bonus.c ft_lstdelone_bonus.c
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
