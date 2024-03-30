@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 11:22:14 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/23 11:40:39 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/30 19:33:17 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	char	*true_big;
 	char	*true_little;
 
+	if (!*little)
+		return ((char *)big);
 	true_big = (char *)big;
 	true_little = (char *)little;
 	i = 0;

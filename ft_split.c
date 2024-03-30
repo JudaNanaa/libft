@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:06:54 by marvin            #+#    #+#             */
-/*   Updated: 2024/03/23 15:06:04 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/30 19:15:47 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ char	**ft_split(char const *s, char c)
 {
 	char	**split;
 
+	if (!s)
+		return (NULL);
 	split = malloc(sizeof(char *) * (ft_count_word(s, c) + 1));
 	if (split == NULL)
 		return (NULL);

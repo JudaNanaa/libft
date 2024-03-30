@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 23:53:14 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/23 00:11:20 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/30 19:58:00 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
+	if (!src || !dst)
+		return (0);
 	i = 0;
 	while (src[i] && i < size - 1)
 	{

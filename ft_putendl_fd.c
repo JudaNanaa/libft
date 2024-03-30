@@ -6,13 +6,13 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:05:57 by marvin            #+#    #+#             */
-/*   Updated: 2024/03/23 15:07:25 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/30 19:10:48 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_lenstr(char const *str)
+static int	ft_lenstr(char *str)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ static int	ft_lenstr(char const *str)
 	return (i);
 }
 
-void	ft_putendl_fd(char const *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	write(fd, s, ft_lenstr(s));
 	write(fd, "\n", 1);

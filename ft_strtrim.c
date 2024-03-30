@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:07:11 by marvin            #+#    #+#             */
-/*   Updated: 2024/03/24 01:14:01 by madamou          ###   ########.fr       */
+/*   Updated: 2024/03/30 23:53:49 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ static int	ft_malloc_size(char const *s1, char const *sep)
 	int	j;
 	int	len_s;
 
-	len_s = ft_lenstr(s1) - 1;
+	len_s = ft_lenstr(s1);
 	i = 0;
 	j = 0;
 	while (ft_is_in_charset(s1[i], sep) == 1)
 		i++;
-	while (ft_is_in_charset(s1[len_s - j], sep) == 1)
+	while (ft_is_in_charset(s1[len_s - 1 - j], sep) == 1)
 		j++;
 	return (len_s - (i + j));
 }
@@ -87,5 +87,8 @@ char	*ft_strtrim(char const *s1, char const *sep)
 {
 	char    str[] = "salut la compagnie salfut";
 	char    set[] = "asult";
-	printf("%s\n", ft_strtrim(str, set));
+	char *imad = ft_strtrim(str, set);
+	printf("%s\n", imad);
+	free(imad);
+	return (0);
 }*/
