@@ -6,7 +6,7 @@
 #    By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 16:07:55 by madamou           #+#    #+#              #
-#    Updated: 2024/03/30 19:25:46 by madamou          ###   ########.fr        #
+#    Updated: 2024/05/10 09:05:24 by madamou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
        ft_split.c ft_strchr.c ft_strclr.c ft_strcpy.c ft_strdup.c ft_striteri.c \
        ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c \
        ft_strncpy.c ft_strnew.c ft_strrchr.c ft_strstr.c ft_strtrim.c \
-       ft_substr.c ft_tolower.c ft_toupper.c ft_strmapi.c main.c ft_strnstr.c
+       ft_substr.c ft_tolower.c ft_toupper.c ft_strmapi.c ft_strnstr.c \
+       ft_strcmp.c ft_strcat.c ft_realloc.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -38,20 +39,17 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c -include ./libft.h $< -o $@
+	$(CC) $(CFLAGS) -c -include ./libft.h -L. -lftprintf -lget_next_line $< -o $@
 
 bonus: all $(OBJS_BONUS)
 	ar rc $(NAME) $(OBJS_BONUS)
-
-test : $(OBJS)
-	cc -Wall -Wextra -Werror $(OBJS) -o test_library
 
 $(OBJS_BONUS): $(SRCS_BONUS)
 	$(CC) $(CFLAGS) -c -include ./libft.h $< -o $@
 
 clean:
 	rm -rf $(OBJS) $(OBJS_BONUS)
-
+                                                                             
 fclean: clean
 	rm -f $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:06:38 by marvin            #+#    #+#             */
-/*   Updated: 2024/03/24 13:59:32 by madamou          ###   ########.fr       */
+/*   Updated: 2024/04/01 01:18:25 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,28 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 
 	i = 0;
 	while (s[i])
-		f(i++, s);
+	{
+		f(i, s + i);
+		i++;
+	}
 }
 
 /*static void	ft_putchar_test(unsigned int i, char *s)
 {
-	write(1, &s[i], 1);
-}*/
+	if (i == 0)
+	{
+		if (s[i] >= 'a' && s[i] <= 'z')
+			s[i] = s[i] - 32;
+	}
+	else
+	{
+		if (s[i] >= 'A' && s[i] <= 'Z')
+			s[i] = s[i] + 32;
+	}
+}
 
-/*int main(void)
+int	main(void)
 {
-	char test[] = "Je suis entrain de test";
+	char test[] = "helLO WorlD!";
 	ft_striteri(test, &ft_putchar_test);
 }*/

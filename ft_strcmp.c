@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 23:29:56 by yourLogin         #+#    #+#             */
-/*   Updated: 2024/04/05 02:12:44 by madamou          ###   ########.fr       */
+/*   Created: 2024/04/20 23:58:23 by madamou           #+#    #+#             */
+/*   Updated: 2024/05/08 23:14:05 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1024);
+	size_t			i;
+	unsigned char	*true_s1;
+	unsigned char	*true_s2;
+
+	true_s1 = (unsigned char *)s1;
+	true_s2 = (unsigned char *)s2;
+	i = 0;
+	while (true_s2[i] || true_s1[i])
+	{
+		if (true_s1[i] != true_s2[i])
+		{
+			if (true_s1[i] < true_s2[i])
+				return (-1);
+			return (1);
+		}
+		i++;
+	}
 	return (0);
 }
-
-// int main(void)
-// {
-// 	printf("%d\n", ft_isalpha(58));
-// 	printf("%d\n", isalpha(58));
-// }

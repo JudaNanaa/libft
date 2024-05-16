@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:06:08 by marvin            #+#    #+#             */
-/*   Updated: 2024/03/19 21:49:59 by marvin           ###   ########.fr       */
+/*   Updated: 2024/04/01 02:10:36 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,3 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, &c, 1);
 	}
 }
-
-/*int main(void)
-{
-	int fd;
-
-	fd = open("test.txt", O_WRONLY | O_TRUNC | O_CREAT, 0640);
-	ft_putnbr_fd(-2147483648, fd);
-}*/

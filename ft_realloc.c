@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 23:29:56 by yourLogin         #+#    #+#             */
-/*   Updated: 2024/04/05 02:12:44 by madamou          ###   ########.fr       */
+/*   Created: 2024/04/23 09:11:50 by madamou           #+#    #+#             */
+/*   Updated: 2024/05/16 05:59:49 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+char	*ft_realloc(char *ptr, int len_realloc)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1024);
-	return (0);
-}
+	char	*tmp;
+	int		i;
 
-// int main(void)
-// {
-// 	printf("%d\n", ft_isalpha(58));
-// 	printf("%d\n", isalpha(58));
-// }
+	i = ft_strlen(ptr);
+	tmp = malloc(sizeof(char) * (i + len_realloc + 1));
+	if (!tmp)
+		return (NULL);
+	tmp[0] = '\0';
+	tmp = ft_strcpy(tmp, ptr);
+	free(ptr);
+	return (tmp);
+}

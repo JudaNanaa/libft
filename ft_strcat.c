@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 23:29:56 by yourLogin         #+#    #+#             */
-/*   Updated: 2024/04/05 02:12:44 by madamou          ###   ########.fr       */
+/*   Created: 2024/04/23 09:10:27 by madamou           #+#    #+#             */
+/*   Updated: 2024/05/08 23:13:18 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+char	*ft_strcat(char *dest, char *src)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1024);
-	return (0);
-}
+	size_t	i;
+	size_t	j;
 
-// int main(void)
-// {
-// 	printf("%d\n", ft_isalpha(58));
-// 	printf("%d\n", isalpha(58));
-// }
+	j = 0;
+	i = ft_strlen(dest);
+	while (src[j])
+		dest[i++] = src[j++];
+	dest[i] = '\0';
+	return (dest);
+}
