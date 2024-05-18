@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 01:49:32 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/23 02:48:24 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/18 11:56:56 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*n_src;
 	unsigned char	*n_dest;
 
+	if (!dest || !src)
+		return (NULL);
 	n_src = (unsigned char *)src;
 	n_dest = (unsigned char *)dest;
 	i = -1;
@@ -26,16 +28,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-/*int	main(void)
-{
-	char imad[300] = "bonjour";
-	char src[] = "salut";
-	printf("%s\n", (imad));
-	printf("%p\n", memcpy(imad, src, 6));
-	printf("%s\n", (imad));
-	char imad1[300] = "bonjour";
-	char src1[] = "salut";
-	printf("%s\n", (imad1));
-	printf("%p\n", ft_memcpy(imad1, src1, 6));
-	printf("%s\n", (imad1));
-}*/
+// int	main(void)
+// {
+// 	printf("%p\n", ft_memcpy(((void *)0), ((void *)0), 3));
+// 	// printf("%p\n",memcpy(((void*)0), ((void*)0), 3));
+// }

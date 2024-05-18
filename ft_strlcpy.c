@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 23:53:14 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/30 19:58:00 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/17 17:09:41 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	if (!src || !dst)
 		return (0);
+	if (size == 0)
+		return (ft_lenstr(src));
 	i = 0;
 	while (src[i] && i < size - 1)
 	{
@@ -38,14 +40,14 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (ft_lenstr(src));
 }
 
-/*int main(void)
-{
-	char dest[] = "";
-	char src[] = "salut";
-	printf("%ld\n", strlcpy(dest, src, 2));
-	printf("%s\n", dest);
-	char dest1[] = "";
-	char src1[] = "salut";
-	printf("%ld\n", strlcpy(dest1, src1, 2));
-	printf("%s\n", dest1);
-}*/
+// int main(void)
+// {
+// 	char dest[] = "a";
+// 	// char src[] = "salut";
+// 	printf("%ld\n", strlcpy(dest, "lorem ipsum dolor sit amet", 1));
+// 	printf("%s\n", dest);
+// 	char dest1[] = "a";
+// 	// char src1[] = "salut";
+// 	printf("%ld\n", ft_strlcpy(dest1, "lorem ipsum dolor sit amet", 1));
+// 	printf("%s\n", dest1);
+// }

@@ -6,7 +6,7 @@
 #    By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 16:07:55 by madamou           #+#    #+#              #
-#    Updated: 2024/05/10 09:05:24 by madamou          ###   ########.fr        #
+#    Updated: 2024/05/17 18:36:58 by madamou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,12 +39,12 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c -include ./libft.h -L. -lftprintf -lget_next_line $< -o $@
+	$(CC) $(CFLAGS) -c -include ./libft.h $< -o $@
 
 bonus: all $(OBJS_BONUS)
 	ar rc $(NAME) $(OBJS_BONUS)
 
-$(OBJS_BONUS): $(SRCS_BONUS)
+%.o : %.c
 	$(CC) $(CFLAGS) -c -include ./libft.h $< -o $@
 
 clean:

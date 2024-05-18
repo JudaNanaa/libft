@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 03:28:22 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/30 19:30:16 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/18 11:59:28 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	true_s1 = (unsigned char *)s1;
 	true_s2 = (unsigned char *)s2;
 	i = 0;
-	while (i < n)
+	while (i < n && (true_s1[i] || true_s2[i]))
 	{
 		if (true_s1[i] != true_s2[i])
 		{
@@ -34,10 +34,18 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-/*int	main(void)
-{
-	char s1[] = "Bon";
-	char s2[] = "Bon6";
-	printf("%d\n", strncmp(s1, s2, 3));
-	printf("%d\n", ft_strncmp(s1, s2, 3));
-}*/
+// int	main(void)
+// {
+//  	char *s1 = "atoms\0\0\0\0";
+//  	char *s2 = "atoms\0abc";
+//  	size_t size = 8;
+//  	int i1 = ((strncmp(s1, s2, size) > 0) ? 1 : ((strncmp(s1, s2,
+						// size) < 0) ? -1 : 0));
+//  	int i2 = ((ft_strncmp(s1, s2, size) > 0) ? 1 : ((ft_strncmp(s1, s2,
+						// size) < 0) ? -1 : 0));
+
+//  	if (i1 == i2)
+//  		printf("yes\n");
+// 	else
+//  		printf("no\n");
+// }

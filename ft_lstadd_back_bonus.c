@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 14:30:23 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/25 14:57:51 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/18 11:35:56 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,37 +31,35 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 }
 
-/*static t_list	*ft_lstnew1(void *content)
-{
-	t_list	*new;
+// static t_list	*ft_lstnew1(void *content)
+// {
+// 	t_list	*new;
 
-	new = malloc(sizeof(t_list) * 1);
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
-}
+// 	new = malloc(sizeof(t_list) * 1);
+// 	if (!new)
+// 		return (NULL);
+// 	new->content = content;
+// 	new->next = NULL;
+// 	return (new);
+// }
 
-int	main(void)
-{
-	// Création de quelques éléments de liste
-	t_list *lst = NULL;
-	t_list *elem1 = ft_lstnew1("Elem1");
-	t_list *elem2 = ft_lstnew1("Elem2");
-	t_list *elem3 = ft_lstnew1("Elem3");
+// int	main(void)
+// {
 
-	// Ajout des éléments à la fin de la liste
-	ft_lstadd_back(&lst, elem1);
-	ft_lstadd_back(&lst, elem2);
-	ft_lstadd_back(&lst, elem3);
+// 	t_list *lst = NULL;
+// 	t_list *elem1 = ft_lstnew1("Elem1");
+// 	t_list *elem2 = ft_lstnew1("Elem2");
+// 	t_list *elem3 = ft_lstnew1("Elem3");
 
-	// Affichage de la liste
-	printf("Liste après l'ajout des éléments :\n");
-	while (lst != NULL)
-	{
-		printf("%s\n", (char *)lst->content);
-		lst = lst->next;
-	}
-	return (0);
-}*/
+// 	ft_lstadd_back(&lst, elem1);
+// 	ft_lstadd_back(&lst, elem2);
+// 	ft_lstadd_back(&lst, elem3);
+
+// 	printf("Liste après l'ajout des éléments :\n");
+// 	while (lst != NULL)
+// 	{
+// 		printf("%s\n", (char *)lst->content);
+// 		lst = lst->next;
+// 	}
+// 	return (0);
+// }

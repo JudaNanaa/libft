@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 12:47:30 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/23 12:58:10 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/18 11:25:27 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	while (i < len)
+	while (i < len && s[start + i])
 	{
 		str[i] = s[start + i];
 		i++;
@@ -32,14 +32,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-/*int main(void)
-{
-	char chain[] = "je suis bien le fils de ma maman";
-	char *result;
+// int main(void)
+// {
+// 	// char chain[] = "je suis bien le fils de ma maman";
+// 	char *result;
 
-	result = ft_substr(chain, 10, 10);
-	if (!result)
-		printf("NULL\n");
-	else
-		printf("%s\n", result);
-}*/
+// 	result = ft_substr("tripouille", 0, 42000);
+// 	if (!strcmp(result, "tripouille"))
+// 		printf("yes\n");
+// 	else
+// 		printf("no\n");
+// }

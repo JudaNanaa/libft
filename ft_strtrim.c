@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:07:11 by marvin            #+#    #+#             */
-/*   Updated: 2024/03/30 23:53:49 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/18 12:10:10 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ static int	ft_malloc_size(char const *s1, char const *sep)
 		i++;
 	while (ft_is_in_charset(s1[len_s - 1 - j], sep) == 1)
 		j++;
+	if (len_s - (i + j) <= 0)
+		return (0);
 	return (len_s - (i + j));
 }
 
@@ -83,12 +85,16 @@ char	*ft_strtrim(char const *s1, char const *sep)
 	return (str);
 }
 
-/*int main(void)
-{
-	char    str[] = "salut la compagnie salfut";
-	char    set[] = "asult";
-	char *imad = ft_strtrim(str, set);
-	printf("%s\n", imad);
-	free(imad);
-	return (0);
-}*/
+// int main(void)
+// {
+// 	char *strtrim;
+
+//     char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
+//     if (!(strtrim = ft_strtrim(s1, " ")))
+//         printf("NULL");
+//     else
+//         printf("%s\n", strtrim);
+//     if (strtrim == s1)
+//         printf("\nA new string was not returned");
+
+// }

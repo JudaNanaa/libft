@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:10:39 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/24 18:59:22 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/17 17:15:46 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,17 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 
-/*static char ft_test(unsigned int i, char c)
-{
-	if (i < 10)
-		c++;
-	else
-		c--;
-	return (c);
-}*/
+// static char ft_test(unsigned int i, char c)
+// {
+// 	if (i < 10)
+// 		c++;
+// 	else
+// 		c--;
+// 	return (c);
+// }
 
-/*int main(void)
-{
-	char chain[] = "aaaaaaaaaacccccccccc";
-	printf("%s\n", ft_strmapi(chain, &ft_test));
-}*/
+// int main(void)
+// {
+// 	char chain[] = "aaaaaaaaaacccccccccc";
+// 	printf("%s\n", ft_strmapi(chain, &ft_test));
+// }
