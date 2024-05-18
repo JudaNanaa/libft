@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 11:42:25 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/28 14:57:38 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/18 17:43:21 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,19 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned char	*ptr;
 	size_t			i;
+	long long		check_nmemb;
+	long long		check_size;
 
 	i = 0;
-	ptr = malloc(nmemb * size);
+	check_nmemb = (long long)nmemb;
+	check_size = (long long)size;
+	if ((nmemb > 4294967295 || size > 4294967295) && check_nmemb < 0
+		&& check_size < 0)
+		return (NULL);
+	if (check_nmemb * check_size < 0)
+		return (NULL);
+	else
+		ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
 	while (i < nmemb * size)
@@ -26,36 +36,14 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return ((void *)ptr);
 }
 
-/*int main(void)
-{
-	char *result;
-	int i = 0;
-
-	result = calloc(10, 0);
-	if (result == NULL)
-	{
-		printf("NULL\n");
-		free(result);
-	}
-	else
-		while (i < 10)
-		{
-			if (result[i] == '\0')
-				printf("c'est bon %d\n", i);
-			i++;
-		}
-	i = 0;
-	result = ft_calloc(10, 0);
-	if (result == NULL)
-	{
-		printf("NULL\n");
-		free(result);
-	}
-	else
-		while (i < 10)
-		{
-			if (result[i] == '\0')
-				printf("c'est bon %d\n", i);
-			i++;
-		}
-}*/
+// int main(void)
+// {
+// 	if (ft_calloc(3, -5) == NULL)
+// 		printf("yes\n");
+// 	else
+// 		printf("no\n");
+// 	if (calloc(3, -5) == NULL)
+// 		printf("yes\n");
+// 	else
+// 		printf("no\n");
+// }

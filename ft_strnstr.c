@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 11:22:14 by madamou           #+#    #+#             */
-/*   Updated: 2024/05/18 11:17:31 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/18 15:17:18 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	true_big = (char *)big;
 	true_little = (char *)little;
 	i = 0;
-	while (i < len && cast >= 0)
+	while (i < len && true_big[i])
 	{
 		j = 0;
 		while (true_big[i + j] == true_little[j] && true_little[j] && i
@@ -41,17 +41,15 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 // int	main(void)
 // {
-// 	// char test[] = "je suis shadowpris";
-// 	// char search[] = "shadow";
-// 	char *result;
-// 	result = strnstr("oui", "coucou", -1);
-// 	if (result == NULL)
-// 		printf("NULL\n");
+// 	// char haystack[30] = "aaabcabcd";
+// 	// char needle[10] = "aabc";
+// 	char * empty = (char*)"";
+// 	if (ft_strnstr(empty, "coucou", -1) == 0)
+// 		printf("yes\n");
 // 	else
-// 		printf("%s\n", result);
-// 	result = ft_strnstr("oui", "coucou", -1);
-// 	if (result == NULL)
-// 		printf("NULL\n");
+// 		printf("no\n");
+// 	if (strnstr(empty, "coucou", -1) == 0)
+// 		printf("yes\n");
 // 	else
-// 		printf("%s\n", result);
+// 		printf("no\n");
 // }

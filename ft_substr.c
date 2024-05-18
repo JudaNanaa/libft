@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 12:47:30 by madamou           #+#    #+#             */
-/*   Updated: 2024/05/18 11:25:27 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/18 16:50:06 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,23 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
-	size_t	i;
+	char				*str;
+	size_t				i;
+	unsigned long long	check;
 
 	i = 0;
+	check = (unsigned long long)len;
 	if (!s)
 		return (NULL);
-	str = malloc(sizeof(char) * (len + 1));
+	if (len >= ft_strlen(s) && start < ft_strlen(s))
+		str = malloc(sizeof(char) * ((ft_strlen(s) - start) + 1));
+	else if (start > ft_strlen(s))
+		str = malloc(sizeof(char) * 1);
+	else
+		str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	while (i < len && s[start + i])
+	while (i < check && (start <= ft_strlen(s)) && s[start + i])
 	{
 		str[i] = s[start + i];
 		i++;
@@ -34,11 +41,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 // int main(void)
 // {
-// 	// char chain[] = "je suis bien le fils de ma maman";
-// 	char *result;
-
-// 	result = ft_substr("tripouille", 0, 42000);
-// 	if (!strcmp(result, "tripouille"))
+// 	char * str = strdup("1");
+// 	char * s = ft_substr(str, 42, 42000000);
+// 	if (!strcmp(s, ""))
 // 		printf("yes\n");
 // 	else
 // 		printf("no\n");

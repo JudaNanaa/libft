@@ -4,3 +4,4 @@ libtest/
 *.a
 .vscode/
 output/
+libftTester/

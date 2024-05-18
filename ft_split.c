@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:06:54 by marvin            #+#    #+#             */
-/*   Updated: 2024/03/30 19:15:47 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/18 17:30:11 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	ft_count_word(char const *s, char c)
 
 	cpt = 0;
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 	{
 		while (s[i] == c && s[i])
@@ -69,7 +71,7 @@ static int	ft_split_words(char **split, char const *s, char c)
 
 	i = 0;
 	index = 0;
-	while (s[i])
+	while (s && s[i])
 	{
 		while (s[i] == c && s[i])
 			i++;
@@ -104,20 +106,10 @@ char	**ft_split(char const *s, char c)
 	return (split);
 }
 
-/*int	main(void)
-{
-	char **test;
-	int i;
-
-	i = 0;
-	test = ft_split("je suis représentée comme tout!", ' ');
-	if (test == NULL)
-	{
-		printf("tout est null\n");
-		return (0);
-	}
-	while (test[i])
-		printf("%s\n", test[i++]);
-	if (test[i] == NULL)
-		printf("%u", 42);
-}*/
+// int	main(void)
+// {
+// 	char **tab;
+// 	// char * invalidReadCheck = 0;
+// 	tab = ft_split(0, 0);
+// 	printf("%s")
+// }

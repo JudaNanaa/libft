@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:05:32 by marvin            #+#    #+#             */
-/*   Updated: 2024/03/25 04:03:12 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/18 12:54:56 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 static int	ft_norminette(const char *str, int i, int sign)
 {
-	int	result;
-	int	j;
+	int					result;
+	unsigned long long	check;
+	int					j;
 
 	j = 0;
 	result = 0;
+	check = 0;
 	while (str[i + j] >= '0' && str[i + j] <= '9')
 	{
 		result = result * 10;
 		result = result + (str[i + j] - '0');
+		check = check * 10;
+		check = check + (str[i + j] - '0');
 		j++;
 	}
-	if (j >= 19)
+	if (j >= 19 && check > 9223372036854775807)
 	{
 		if (sign == -1)
 			return (0);
@@ -52,9 +56,11 @@ int	ft_atoi(const char *str)
 	return (ft_norminette(str, i, sign));
 }
 
-/*int	main(void)
-{
-	char chain[] = "-99999999999953535335539999999";
-	printf("%d\n", ft_atoi(chain));
-	printf("%d\n", atoi(chain));
-}*/
+// int	main(void)
+// {
+// 	// char chain[] = "-99999999999953535335539999999";
+// 	printf("%d\n",
+// ft_atoi("+0000000000000000000000000000000000000000000000000000123"));
+// 	printf("%d\n",
+// atoi("+0000000000000000000000000000000000000000000000000000123"));
+// }

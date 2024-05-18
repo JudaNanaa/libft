@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 21:47:05 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/08 23:24:52 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/18 15:22:01 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <ctype.h>
 # include <fcntl.h>
 # include <stddef.h>
+# include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>

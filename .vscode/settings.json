@@ -59,6 +59,8 @@
   "C_Cpp.errorSquiggles": "enabled",
   "files.associations": {
     "libft.h": "c",
-    "get_next_line.h": "c"
+    "get_next_line.h": "c",
+    "limits.h": "c",
+    "string": "cpp"
   }
 }

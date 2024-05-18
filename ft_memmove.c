@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 02:12:47 by madamou           #+#    #+#             */
-/*   Updated: 2024/05/18 11:45:57 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/18 18:20:38 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*n_src;
 	unsigned char	*n_dest;
 
-	if (!dest || !src)
+	if ((!dest || !src) && (!dest && !src))
 		return (NULL);
 	n_src = (unsigned char *)src;
 	n_dest = (unsigned char *)dest;
@@ -39,6 +39,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 // int	main(void)
 // {
-// 	printf("%p\n",ft_memmove(((void*)0), ((void*)0), 5));
-// 	printf("%p\n", memmove(((void*)0), ((void*)0), 5));
+// 	char b[0xF0];
+// 	printf("%p\n",ft_memmove(b, ((void*)0), 5));
+// 	printf("%p\n", memmove(b, ((void*)0), 5));
 // }
