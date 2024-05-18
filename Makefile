@@ -6,7 +6,7 @@
 #    By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 16:07:55 by madamou           #+#    #+#              #
-#    Updated: 2024/05/17 18:36:58 by madamou          ###   ########.fr        #
+#    Updated: 2024/05/18 22:58:29 by madamou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,10 @@ bonus: all $(OBJS_BONUS)
 %.o : %.c
 	$(CC) $(CFLAGS) -c -include ./libft.h $< -o $@
 
+so:
+	$(CC) -fPIC $(CFLAGS) $(SRCS)
+	gcc -shared -o libft.so $(OBJS)
+
 clean:
 	rm -rf $(OBJS) $(OBJS_BONUS)
                                                                              
@@ -55,4 +59,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus test
+.PHONY: all clean fclean re bonus test so

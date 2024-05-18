@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 01:49:32 by madamou           #+#    #+#             */
-/*   Updated: 2024/05/18 18:16:24 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/18 23:18:31 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*n_src;
 	unsigned char	*n_dest;
 
+	if (!dest && !src && n != 0)
+	{
+		return (dest);
+	}
 	n_src = (unsigned char *)src;
 	n_dest = (unsigned char *)dest;
 	i = -1;
@@ -26,7 +30,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-// int	main(void)
-// {
-// 	ft_memcpy(((void*)0), ((void*)0), 3);
-// }
+/*int	main(void)
+{
+	ft_memcpy(NULL, NULL, 0);
+	//memcpy(((void*)0), ((void*)0), 3);
+}*/
