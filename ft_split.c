@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:06:54 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/18 17:30:11 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/19 13:53:05 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,11 @@ static char	*ft_norminette(char const *s, int i, int j)
 
 static int	ft_free_split(char **split, int index)
 {
-	if (split[index - 1] == NULL)
+	if (split[index] == NULL)
 	{
 		while (index >= 0)
 			free(split[index--]);
+		free(split);
 		return (0);
 	}
 	return (1);
@@ -83,8 +84,8 @@ static int	ft_split_words(char **split, char const *s, char c)
 		}
 		if (s[i - 1] != c)
 		{
-			split[index++] = ft_norminette(s, i, j);
-			if (ft_free_split(split, index) == 0)
+			split[index] = ft_norminette(s, i, j);
+			if (ft_free_split(split, index++) == 0)
 				return (0);
 		}
 	}
@@ -106,10 +107,11 @@ char	**ft_split(char const *s, char c)
 	return (split);
 }
 
-// int	main(void)
-// {
-// 	char **tab;
-// 	// char * invalidReadCheck = 0;
-// 	tab = ft_split(0, 0);
-// 	printf("%s")
-// }
+/*int	main(void)
+{
+ 	char **tab;
+ 	// char * invalidReadCheck = 0;
+ 	tab = ft_split("hello!", ' ');
+ 	printf("%s\n", tab[0]);
+ 	printf("%s\n", tab[1]);
+}*/
