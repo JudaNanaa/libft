@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   functions4.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 09:11:50 by madamou           #+#    #+#             */
-/*   Updated: 2024/05/16 05:59:49 by madamou          ###   ########.fr       */
+/*   Created: 2024/04/10 06:52:03 by madamou           #+#    #+#             */
+/*   Updated: 2024/05/24 18:23:47 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_realloc(char *ptr, int len_realloc)
+int	ft_size_malloc_long(unsigned long long int nb, int len_base)
 {
-	char	*tmp;
-	int		i;
+	int	size;
 
-	i = ft_strlen(ptr);
-	tmp = malloc(sizeof(char) * (i + len_realloc + 1));
-	if (!tmp)
+	size = 1;
+	while (nb / len_base > 0)
 	{
-		free(ptr);
-		return (NULL);
+		nb = nb / len_base;
+		size++;
 	}
-	tmp[0] = '\0';
-	tmp = ft_strcpy(tmp, ptr);
-	free(ptr);
-	return (tmp);
+	return (size);
 }

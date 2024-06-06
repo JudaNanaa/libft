@@ -6,7 +6,7 @@
 #    By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 16:07:55 by madamou           #+#    #+#              #
-#    Updated: 2024/05/18 22:58:29 by madamou          ###   ########.fr        #
+#    Updated: 2024/06/06 11:35:05 by madamou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,9 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
        ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c \
        ft_strncpy.c ft_strnew.c ft_strrchr.c ft_strstr.c ft_strtrim.c \
        ft_substr.c ft_tolower.c ft_toupper.c ft_strmapi.c ft_strnstr.c \
-       ft_strcmp.c ft_strcat.c ft_realloc.c
+       ft_strcmp.c ft_strcat.c ft_realloc.c get_next_line_bonus.c get_next_line_utils_bonus.c \
+       ft_printf.c ft_itoa_printf.c functions.c functions2.c functions3.c \
+	functions4.c printf_utils.c check_functions.c 
 
 OBJS = $(SRCS:.c=.o)
 

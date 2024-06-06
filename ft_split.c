@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:06:54 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/19 13:53:05 by madamou          ###   ########.fr       */
+/*   Updated: 2024/05/20 13:38:25 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,14 @@ static int	ft_count_word(char const *s, char c)
 		return (0);
 	while (s[i])
 	{
-		while (s[i] == c && s[i])
+		while (s[i] && s[i] == c)
 			i++;
-		while (s[i] != c && s[i])
+		while (s[i] && s[i] != c)
 			i++;
 		cpt++;
 	}
+	if (i - 1 < 0)
+		return (0);
 	if (s[i - 1] == c)
 		cpt--;
 	return (cpt);
@@ -74,10 +76,10 @@ static int	ft_split_words(char **split, char const *s, char c)
 	index = 0;
 	while (s && s[i])
 	{
-		while (s[i] == c && s[i])
+		while (s[i] && s[i] == c)
 			i++;
 		j = 0;
-		while (s[i] != c && s[i])
+		while (s[i] && s[i] != c)
 		{
 			i++;
 			j++;
@@ -102,6 +104,11 @@ char	**ft_split(char const *s, char c)
 	split = malloc(sizeof(char *) * (ft_count_word(s, c) + 1));
 	if (split == NULL)
 		return (NULL);
+	if (ft_count_word(s, c) == 0)
+	{
+		split[0] = NULL;
+		return (split);
+	}
 	if (ft_split_words(split, s, c) == 0)
 		return (NULL);
 	return (split);

@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 23:00:58 by madamou           #+#    #+#             */
-/*   Updated: 2024/05/19 15:54:58 by madamou          ###   ########.fr       */
+/*   Updated: 2024/06/06 11:36:06 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,13 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (NULL);
 	while (lst)
 	{
-		result = ft_lstnew(f(lst->content));
+		result = ft_lstnew(lst->content);
 		if (!result)
 		{
 			ft_lstclear(&final, del);
 			return (NULL);
 		}
+		result->content = f(result->content);
 		ft_lstadd_back(&final, result);
 		lst = lst->next;
 	}
