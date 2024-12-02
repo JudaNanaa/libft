@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strlen_2d.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 15:06:50 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/02 02:38:34 by madamou          ###   ########.fr       */
+/*   Created: 2024/12/02 02:44:08 by madamou           #+#    #+#             */
+/*   Updated: 2024/12/02 02:44:53 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+int ft_strlen_2d(char **tab)
 {
-	char				*str;
-	long unsigned int	i;
-
-	i = 0;
-	str = malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
-		return (NULL);
-	while (i < size)
-		str[i++] = '\0';
-	str[i] = '\0';
-	return (str);
-}
-
-/*int main(void)
-{
-	char *test;
 	int i;
 
 	i = 0;
-	test = ft_strnew(10);
-	while (i < 10)
-	{
-		if (test[i++] == '\0')
-			printf("je suis le plus fort\n");
-	}
-}*/
+	while (tab[i])
+		i++;
+	return (i);
+}

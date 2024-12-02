@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   join2d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 15:06:50 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/02 02:38:34 by madamou          ###   ########.fr       */
+/*   Created: 2024/12/02 02:50:28 by madamou           #+#    #+#             */
+/*   Updated: 2024/12/02 02:51:08 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+int	join2d(char **join, char **str1, char **str2)
 {
-	char				*str;
-	long unsigned int	i;
+	int	i;
+	int	j;
 
-	i = 0;
-	str = malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
-		return (NULL);
-	while (i < size)
-		str[i++] = '\0';
-	str[i] = '\0';
-	return (str);
-}
-
-/*int main(void)
-{
-	char *test;
-	int i;
-
-	i = 0;
-	test = ft_strnew(10);
-	while (i < 10)
+	i = -1;
+	j = -1;
+	while (str1[++i] != NULL)
 	{
-		if (test[i++] == '\0')
-			printf("je suis le plus fort\n");
+		join[++j] = ft_strdup(str1[i]);
+		if (join[j] == NULL)
+			return (free_2d(join), EXIT_FAILURE);
 	}
-}*/
+	i = -1;
+	while (str2[++i] != NULL)
+	{
+		join[++j] = ft_strdup(str2[i]);
+		if (join[j] == NULL)
+			return (free_2d(join), EXIT_FAILURE);
+	}
+	join[++j] = NULL;
+	return (EXIT_SUCCESS);
+}

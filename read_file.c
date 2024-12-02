@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   read_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 15:06:50 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/02 02:38:34 by madamou          ###   ########.fr       */
+/*   Created: 2024/04/05 20:03:40 by madamou           #+#    #+#             */
+/*   Updated: 2024/12/02 02:49:33 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*read_file(int fd)
 {
-	char				*str;
-	long unsigned int	i;
+	char	*temp;
+	char	*str;
 
-	i = 0;
-	str = malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
+	temp = get_next_line(fd);
+	if (temp == NULL)
 		return (NULL);
-	while (i < size)
-		str[i++] = '\0';
-	str[i] = '\0';
+	str = NULL;
+	while (temp != NULL)
+	{
+		str = ft_re_strjoin(str, temp);
+		free(temp);
+		if (str == NULL)
+			return (NULL);
+		temp = get_next_line(fd);
+	}
 	return (str);
 }
-
-/*int main(void)
-{
-	char *test;
-	int i;
-
-	i = 0;
-	test = ft_strnew(10);
-	while (i < 10)
-	{
-		if (test[i++] == '\0')
-			printf("je suis le plus fort\n");
-	}
-}*/

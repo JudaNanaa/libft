@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   strdup2d.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 15:06:50 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/02 02:38:34 by madamou          ###   ########.fr       */
+/*   Created: 2024/12/02 02:52:33 by madamou           #+#    #+#             */
+/*   Updated: 2024/12/02 02:52:48 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	**strdup2d(char **str)
 {
-	char				*str;
-	long unsigned int	i;
+	char	**res;
+	int		i;
 
-	i = 0;
-	str = malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
+	res = malloc(sizeof(char *) * (ft_strlen_2d(str) + 1));
+	if (res == NULL)
 		return (NULL);
-	while (i < size)
-		str[i++] = '\0';
-	str[i] = '\0';
-	return (str);
-}
-
-/*int main(void)
-{
-	char *test;
-	int i;
-
-	i = 0;
-	test = ft_strnew(10);
-	while (i < 10)
+	i = -1;
+	while (str[++i] != NULL)
 	{
-		if (test[i++] == '\0')
-			printf("je suis le plus fort\n");
+		res[i] = ft_strdup(str[i]);
+		if (res[i] == NULL)
+			return (free_2d(res), NULL);
 	}
-}*/
+	res[i] = NULL;
+	return (res);
+}

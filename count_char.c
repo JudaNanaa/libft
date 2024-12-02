@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   count_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 15:06:50 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/02 02:38:34 by madamou          ###   ########.fr       */
+/*   Created: 2024/06/27 02:14:46 by ibaby             #+#    #+#             */
+/*   Updated: 2024/10/09 00:26:10 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+int	count_char(char *str, char char_to_count)
 {
-	char				*str;
-	long unsigned int	i;
+	int	i;
+	int	count;
 
-	i = 0;
-	str = malloc(sizeof(char) * (size + 1));
 	if (str == NULL)
-		return (NULL);
-	while (i < size)
-		str[i++] = '\0';
-	str[i] = '\0';
-	return (str);
-}
-
-/*int main(void)
-{
-	char *test;
-	int i;
-
+		return (0);
 	i = 0;
-	test = ft_strnew(10);
-	while (i < 10)
+	count = 0;
+	while (str[i] != '\0')
 	{
-		if (test[i++] == '\0')
-			printf("je suis le plus fort\n");
+		if (str[i] == char_to_count)
+			++count;
+		i++;
 	}
-}*/
+	return (count);
+}

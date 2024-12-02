@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   functions4.c                                       :+:      :+:    :+:   */
+/*   ft_split_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
+/*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 06:52:03 by madamou           #+#    #+#             */
-/*   Updated: 2024/05/24 18:23:47 by madamou          ###   ########.fr       */
+/*   Created: 2024/06/01 20:12:07 by madamou           #+#    #+#             */
+/*   Updated: 2024/06/01 20:15:35 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_size_malloc_long(unsigned long long int nb, int len_base)
+int	ft_is_in_charset(char c, char *set)
 {
-	int	size;
+	int	index;
 
-	size = 1;
-	while (nb / len_base > 0)
+	index = 0;
+	while (set[index])
 	{
-		nb = nb / len_base;
-		size++;
+		if (c == set[index])
+			return (1);
+		index++;
 	}
-	return (size);
+	return (0);
 }

@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   sort_str2d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 15:06:50 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/02 02:38:34 by madamou          ###   ########.fr       */
+/*   Created: 2024/04/06 01:27:18 by madamou           #+#    #+#             */
+/*   Updated: 2024/12/02 02:49:20 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	sort_str2d(char **str)
 {
-	char				*str;
-	long unsigned int	i;
+	int		temp;
+	char	*lower;
+	int		i;
+	int		y;
 
-	i = 0;
-	str = malloc(sizeof(char) * (size + 1));
-	if (str == NULL)
-		return (NULL);
-	while (i < size)
-		str[i++] = '\0';
-	str[i] = '\0';
-	return (str);
-}
-
-/*int main(void)
-{
-	char *test;
-	int i;
-
-	i = 0;
-	test = ft_strnew(10);
-	while (i < 10)
+	y = -1;
+	while (str[++y] != NULL)
 	{
-		if (test[i++] == '\0')
-			printf("je suis le plus fort\n");
+		i = y;
+		temp = i;
+		lower = str[i];
+		while (str[++i] != NULL)
+		{
+			if (ft_strcmp(lower, str[i]) > 0)
+			{
+				temp = i;
+				lower = str[i];
+			}
+		}
+		str[temp] = str[y];
+		str[y] = lower;
 	}
-}*/
+}
