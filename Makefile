@@ -6,7 +6,7 @@
 #    By: madamou <madamou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 16:07:55 by madamou           #+#    #+#              #
-#    Updated: 2024/12/03 00:10:34 by madamou          ###   ########.fr        #
+#    Updated: 2024/12/03 01:19:26 by madamou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,8 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar rc $(NAME) $(OBJS)
-
+	@echo
+	@echo "✅$(GREEN)Libft archived>_$(END)✅"
 $(OBJS_DIR)/%.o : %.c
 	@$(DIR_DUP)
 	@$(CC) $(C_FLAGS) -c $< -o $@
