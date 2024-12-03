@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 21:47:05 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/02 03:23:53 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/03 00:32:43 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <string.h>
 # include <strings.h>
 # include <unistd.h>
+# include "ft_printf/ft_printf.h"
 
 typedef struct s_list
 {
@@ -84,7 +85,7 @@ void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_calloc(size_t nmemb, size_t size);
 
-void 				free_2d(char **to_free);
+void				free_2d(char **to_free);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putchar(char c);
 void				ft_putendl_fd(char *s, int fd);

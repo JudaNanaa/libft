@@ -6,7 +6,7 @@
 #    By: madamou <madamou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 16:07:55 by madamou           #+#    #+#              #
-#    Updated: 2024/12/02 03:19:11 by madamou          ###   ########.fr        #
+#    Updated: 2024/12/03 00:10:34 by madamou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,12 +96,10 @@ bonus: all $(OBJS_BONUS)
 	$(CC) $(C_FLAGS) -c -include ./libft.h $< -o $@
 
 clean:
-	@rm -rf $(OBJS_DIR) 
-	@make clean -C ft_printf
+	@rm -rf $(OBJS_DIR)
                                                                              
 fclean: clean
 	@rm -f $(NAME)
-	@make fclean -C ft_printf
 re: fclean all
 
 .PHONY: all clean fclean re bonus

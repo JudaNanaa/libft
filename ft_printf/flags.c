@@ -6,14 +6,14 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 03:56:52 by madamou           #+#    #+#             */
-/*   Updated: 2024/12/02 03:16:45 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/03 00:33:28 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdbool.h>
 
-int	flag_plus(t_data *data)
+int	flag_plus(t_printf *data)
 {
 	char	*dest;
 
@@ -31,7 +31,7 @@ int	flag_plus(t_data *data)
 	return (0);
 }
 
-int	flag_space(t_data *data)
+int	flag_space(t_printf *data)
 {
 	char	*dest;
 
@@ -51,7 +51,7 @@ int	flag_space(t_data *data)
 	return (0);
 }
 
-int	flag_hash(t_data *data)
+int	flag_hash(t_printf *data)
 {
 	char	*dest;
 
@@ -71,7 +71,7 @@ int	flag_hash(t_data *data)
 	return (0);
 }
 
-int	flag_zero(t_data *data)
+int	flag_zero(t_printf *data)
 {
 	char			*dest;
 	unsigned int	len_arg;
@@ -99,7 +99,7 @@ int	flag_zero(t_data *data)
 	return (0);
 }
 
-int	flag_minus(t_data *data)
+int	flag_minus(t_printf *data)
 {
 	char			*dest;
 	unsigned int	len_arg;

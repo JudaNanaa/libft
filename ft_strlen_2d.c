@@ -6,15 +6,15 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 02:44:08 by madamou           #+#    #+#             */
-/*   Updated: 2024/12/02 02:44:53 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/03 00:32:16 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strlen_2d(char **tab)
+int	ft_strlen_2d(char **tab)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (tab[i])

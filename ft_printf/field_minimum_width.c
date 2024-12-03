@@ -6,13 +6,13 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 21:48:18 by madamou           #+#    #+#             */
-/*   Updated: 2024/12/02 03:16:45 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/03 00:33:28 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	field_minimum_width(t_data *data)
+int	field_minimum_width(t_printf *data)
 {
 	char			*dest;
 	unsigned int	len_arg;
