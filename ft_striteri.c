@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
+/*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:06:38 by marvin            #+#    #+#             */
-/*   Updated: 2024/04/01 01:18:25 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/06 23:55:23 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// static void	ft_putchar_test(unsigned int i, char *s);
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {

@@ -6,11 +6,12 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 15:31:37 by itahri            #+#    #+#             */
-/*   Updated: 2024/12/02 02:38:54 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/06 23:35:18 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
+#include "libft.h"
 
 char	*ft_buff_to_all(char *all, char *buff)
 {
@@ -22,9 +23,9 @@ char	*ft_buff_to_all(char *all, char *buff)
 	if (!str)
 		return (free(all), NULL);
 	str[0] = '\0';
-	ft_strcpy_gnl(str, all);
+	ft_strcpy(str, all);
 	free(all);
-	ft_strcpy_gnl(&str[i], buff);
+	ft_strcpy(&str[i], buff);
 	return (str);
 }
 
@@ -34,20 +35,14 @@ char	*ft_read_file(int fd, char *sortie, char *buff)
 
 	buff[0] = '\0';
 	nb_read = BUFFER_SIZE;
-	while (ft_check_if_newline(sortie) == 0)
+	while (ft_check_if_newline(sortie) == false)
 	{
 		nb_read = read(fd, buff, BUFFER_SIZE);
 		if (nb_read == -1)
 			return (free(sortie), NULL);
 		buff[nb_read] = '\0';
-		if (nb_read < BUFFER_SIZE)
-			break ;
-		sortie = ft_buff_to_all(sortie, buff);
-		if (!sortie)
-			return (NULL);
-	}
-	if (nb_read < BUFFER_SIZE)
-	{
+		if (nb_read == 0)
+			return (sortie);
 		sortie = ft_buff_to_all(sortie, buff);
 		if (!sortie)
 			return (NULL);
@@ -66,13 +61,13 @@ char	*get_next_line(int fd)
 	if (!sortie)
 		return (stach[fd][0] = '\0', NULL);
 	sortie[0] = '\0';
-	sortie = ft_strcpy_gnl(sortie, stach[fd]);
+	ft_strcpy(sortie, stach[fd]);
 	sortie = ft_read_file(fd, sortie, stach[fd]);
 	if (!sortie)
 		return (stach[fd][0] = '\0', NULL);
-	if (ft_check_if_newline(sortie) == 1)
+	if (ft_check_if_newline(sortie) == true)
 	{
-		ft_strcpy_gnl(stach[fd], &sortie[ft_strlen_gnl(sortie, 2)]);
+		ft_strcpy(stach[fd], &sortie[ft_strlen_gnl(sortie, 2)]);
 		sortie = ft_format_sortie(sortie);
 	}
 	else

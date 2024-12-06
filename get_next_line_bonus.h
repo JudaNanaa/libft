@@ -6,13 +6,14 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 15:32:08 by itahri            #+#    #+#             */
-/*   Updated: 2024/12/02 02:39:41 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/06 23:25:37 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
+# include "libft.h"
 # include <bsd/string.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -23,10 +24,9 @@
 # endif // !BUFFER_SIZE
 
 int		ft_strlen_gnl(char *str, int cas);
-int		ft_check_if_newline(char *sortie);
+bool	ft_check_if_newline(char *sortie);
 
 char	*get_next_line(int fd);
-char	*ft_strcpy_gnl(char *dest, char *src);
 
 char	*ft_format_sortie(char *sortie);
 

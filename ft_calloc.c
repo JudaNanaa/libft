@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 11:42:25 by madamou           #+#    #+#             */
-/*   Updated: 2024/12/02 02:38:34 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/07 00:14:10 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned char	*ptr;
-	size_t			i;
 	long long		check_nmemb;
 	long long		check_size;
 
-	i = 0;
 	check_nmemb = (long long)nmemb;
 	check_size = (long long)size;
 	if ((nmemb > 4294967295 || size > 4294967295) && check_nmemb < 0
@@ -31,8 +29,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
-	while (i < nmemb * size)
-		ptr[i++] = '\0';
+	ft_bzero(ptr, nmemb * size);
 	return ((void *)ptr);
 }
 

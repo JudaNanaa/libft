@@ -6,23 +6,11 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:10:39 by madamou           #+#    #+#             */
-/*   Updated: 2024/12/02 02:38:34 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/06 23:50:25 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// static char	ft_test(unsigned int i, char c);
-
-static int	ft_lenstr(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -34,7 +22,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!s)
 		return (NULL);
 	true_s = (char *)s;
-	str = malloc(sizeof(char) * (ft_lenstr(true_s) + 1));
+	str = malloc(sizeof(char) * (ft_strlen(true_s) + 1));
 	if (!str)
 		return (NULL);
 	while (true_s[++i])

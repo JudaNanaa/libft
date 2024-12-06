@@ -6,14 +6,12 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:06:54 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/02 02:39:17 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/07 00:05:14 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <time.h>
-
-int			ft_is_in_charset(char c, char *set);
 
 static int	ft_count_word(char const *s, char *c)
 {
@@ -37,35 +35,6 @@ static int	ft_count_word(char const *s, char *c)
 	return (cpt);
 }
 
-static char	*ft_norminette(char const *s, int i, int j)
-{
-	int		k;
-	char	*str;
-
-	k = 0;
-	str = malloc(sizeof(char) * (j + 1));
-	if (str == NULL)
-		return (NULL);
-	while (k < j)
-	{
-		str[k] = s[i - j + k];
-		k++;
-	}
-	str[k] = '\0';
-	return (str);
-}
-
-int	free_split1(char **split, int index)
-{
-	if (split[index] == NULL)
-	{
-		while (index >= 0)
-			free(split[index--]);
-		return (0);
-	}
-	return (1);
-}
-
 static int	ft_split_words(char **split, char const *s, char *c)
 {
 	int	i;
@@ -86,9 +55,9 @@ static int	ft_split_words(char **split, char const *s, char *c)
 		}
 		if (!ft_is_in_charset(s[i - 1], c))
 		{
-			split[index] = ft_norminette(s, i, j);
-			if (free_split1(split, index++) == 0)
-				return (0);
+			split[index] = ft_substr(s, i, j);
+			if (split[index] == NULL)
+				return (free_split(split), 0);
 		}
 	}
 	split[index] = 0;

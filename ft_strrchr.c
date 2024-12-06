@@ -3,24 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: madamou <madamou@contact.42.fr>            +#+  +:+       +#+        */
+/*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 03:12:04 by madamou           #+#    #+#             */
-/*   Updated: 2024/03/30 19:36:49 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/06 23:48:15 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_lenstr(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -28,7 +18,7 @@ char	*ft_strrchr(const char *s, int c)
 	char	*ptr;
 
 	ptr = (char *)s;
-	i = ft_lenstr(s);
+	i = ft_strlen(s);
 	while (i >= 0)
 	{
 		if (ptr[i] == (char)c)

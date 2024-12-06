@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:06:50 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/02 02:38:34 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/07 00:14:19 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,11 @@
 char	*ft_strnew(size_t size)
 {
 	char				*str;
-	long unsigned int	i;
 
-	i = 0;
 	str = malloc(sizeof(char) * (size + 1));
 	if (str == NULL)
 		return (NULL);
-	while (i < size)
-		str[i++] = '\0';
-	str[i] = '\0';
+	ft_bzero(str, size + 1);
 	return (str);
 }
 

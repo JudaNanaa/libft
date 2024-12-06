@@ -6,11 +6,12 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 16:39:33 by itahri            #+#    #+#             */
-/*   Updated: 2024/12/02 02:38:54 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/06 23:40:26 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
+#include <stdbool.h>
 #include <string.h>
 
 int	ft_strlen_gnl(char *str, int cas)
@@ -25,52 +26,27 @@ int	ft_strlen_gnl(char *str, int cas)
 	}
 	if (cas == 2)
 	{
-		while (str && str[i] != '\n')
+		while (str[i] && str[i] != '\n')
 			i++;
 		i++;
 	}
 	return (i);
 }
 
-char	*ft_strcpy_gnl(char *dest, char *src)
-{
-	size_t	*intdest;
-	size_t	*intsrc;
-	size_t	len_int;
-	size_t	i;
-
-	intdest = (size_t *)dest;
-	intsrc = (size_t *)src;
-	len_int = ft_strlen_gnl(src, 1) / sizeof(size_t);
-	i = 0;
-	while (i < len_int)
-	{
-		intdest[i] = intsrc[i];
-		i++;
-	}
-	i *= sizeof(size_t);
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	return (dest[i] = '\0', dest);
-}
-
-int	ft_check_if_newline(char *sortie)
+bool	ft_check_if_newline(char *sortie)
 {
 	int	i;
 
 	i = 0;
 	if (!sortie)
-		return (0);
+		return (false);
 	while (sortie[i])
 	{
 		if (sortie[i] == '\n')
-			return (1);
+			return (true);
 		i++;
 	}
-	return (0);
+	return (false);
 }
 
 char	*ft_format_sortie(char *sortie)

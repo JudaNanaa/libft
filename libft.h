@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 21:47:05 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/03 00:32:43 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/07 00:19:46 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,8 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-int					count_char(char *str, char char_to_count);
-char				*ft_re_strdup(const char *src);
-char				*ft_re_strjoin(const char *s1, const char *s2);
-char				**str2d_join(char **str1, char **str2);
-char				**re_str2djoin(char **str1, char **str2);
-char				*str_join_2d(char **str_2d, char *sep);
-char				*str_join_2d_and_free(char **str_2d, char *sep);
-char				**strdup2d(char **str);;
-char				*read_file(int fd);
 
+int					count_char(char *str, char char_to_count);
 int					join2d(char **join, char **str1, char **str2);
 int					ft_atoi(const char *str);
 int					ft_isalpha(int c);
@@ -57,11 +49,16 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_printf(const char *str, ...);
 int					ft_strcmp(const char *s1, const char *s2);
 int					free_split(char **split);
-int					ft_is_in_charset(char c, char *set);
+int					ft_is_in_charset(char c, const char *set);
 
 char				**strdup2d(char **str);
+char				**str2d_join(char **str1, char **str2);
+char				**re_str2djoin(char **str1, char **str2);
+char				**strdup2d(char **str);
+char				**ft_split(char *s, char *c);
+
 char				*ft_itoa(int n);
-char				*ft_strcpy(char *dest, char *src);
+char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strdup(const char *src);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strnew(size_t size);
@@ -74,10 +71,14 @@ char				*ft_strnstr(const char *big, const char *little,
 						size_t len);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-// char				*ft_realloc(char *ptr, int len_realloc);
-char				*ft_strcat(char *dest, char *src);
+char				*ft_realloc(char *ptr, int len_realloc);
+char				*ft_strcat(char *dest, const char *src);
+char				*ft_re_strdup(const char *src);
+char				*ft_re_strjoin(const char *s1, const char *s2);
+char				*str_join_2d(char **str_2d, char *sep);
+char				*str_join_2d_and_free(char **str_2d, char *sep);
+char				*read_file(int fd);
 char				*get_next_line(int fd);
-char				**ft_split(char *s, char *c);
 
 void				*ft_memset(void *s, int c, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
