@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   add_string_char_2d.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 15:06:33 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/06 23:55:56 by madamou          ###   ########.fr       */
+/*   Created: 2024/12/16 02:05:39 by madamou           #+#    #+#             */
+/*   Updated: 2024/12/16 02:07:07 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+int	add_string_char_2d(char ***tabb, char *str)
 {
-	char	*dest;
+	char	**new;
+	int		i;
+	char	**buff;
 
-	if (src == NULL)
-		return (NULL);
-	dest = malloc(sizeof(char) * (ft_strlen(src) + 1));
-	if (dest == NULL)
-		return (NULL);
-	ft_strcpy(dest, src);
-	return (dest);
+	buff = *tabb;
+	new = malloc(sizeof(char *) * (ft_strlen_2d(buff) + 1 + 1));
+	if (!new)
+		return (-1);
+	i = 0;
+	while (buff && buff[i])
+	{
+		new[i] = buff[i];
+		i++;
+	}
+	new[i] = str;
+	new[++i] = NULL;
+	free(buff);
+	*tabb = new;
+	return (0);
 }
-
-/*int main(void)
-{
-	printf("%s\n", ft_strdup("je suis entrain de test!"));
-}*/

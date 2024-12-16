@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 21:47:05 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/07 00:19:46 by madamou          ###   ########.fr       */
+/*   Updated: 2024/12/16 02:08:04 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # include <string.h>
 # include <strings.h>
 # include <unistd.h>
-# include "ft_printf/ft_printf.h"
 
 typedef struct s_list
 {
@@ -31,7 +30,13 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+// Function
+int					ft_printf(const char *str, ...);
+int					ft_dprintf(int fd, const char *str, ...);
+char				*ft_sprintf(const char *str, ...);
+char				*get_next_line(int fd);
 
+int					add_string_char_2d(char ***tabb, char *str);
 int					count_char(char *str, char char_to_count);
 int					join2d(char **join, char **str1, char **str2);
 int					ft_atoi(const char *str);
@@ -78,7 +83,6 @@ char				*ft_re_strjoin(const char *s1, const char *s2);
 char				*str_join_2d(char **str_2d, char *sep);
 char				*str_join_2d_and_free(char **str_2d, char *sep);
 char				*read_file(int fd);
-char				*get_next_line(int fd);
 
 void				*ft_memset(void *s, int c, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);

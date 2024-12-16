@@ -22,8 +22,8 @@ char	**str2d_join(char **str1, char **str2)
 		return (str2 = strdup2d(str1), str2);
 	if (str1 == NULL && str2 != NULL)
 		return (str1 = strdup2d(str2), str1);
-	join = malloc(sizeof(char *)
-			* (ft_strlen_2d(str1) + ft_strlen_2d(str2) + 1));
+	join = malloc(sizeof(char *) * (ft_strlen_2d(str1) + ft_strlen_2d(str2)
+				+ 1));
 	if (join == NULL)
 		return (NULL);
 	if (join2d(join, str1, str2) == EXIT_FAILURE)
@@ -41,8 +41,8 @@ char	**re_str2djoin(char **str1, char **str2)
 		return (str2 = strdup2d(str1), free_2d(str1), str2);
 	if (str1 == NULL && str2 != NULL)
 		return (strdup2d(str2));
-	join = malloc(sizeof(char *)
-			* (ft_strlen_2d(str1) + ft_strlen_2d(str2) + 1));
+	join = malloc(sizeof(char *) * (ft_strlen_2d(str1) + ft_strlen_2d(str2)
+				+ 1));
 	if (join == NULL)
 		return (free_2d(str1), NULL);
 	if (join2d(join, str1, str2) == EXIT_FAILURE)
